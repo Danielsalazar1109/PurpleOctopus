@@ -1,11 +1,10 @@
 'use client'
-import React, { useState } from 'react'
+import React from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 
 export default function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false })
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   const slides = [
     {
