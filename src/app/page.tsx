@@ -17,12 +17,14 @@ export default function Home() {
           }}
           priority
         />
-        <h1 className="text-5xl font-bold text-white absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          IMPROVING HOMES.
-        </h1>
-        <p className="text-2xl text-white absolute top-[60%] left-1/2 transform -translate-x-1/2">
-          INTERIOR/EXTERIOR CLEANING
-        </p>
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
+            IMPROVING HOMES.
+          </h1>
+          <p className="text-xl md:text-2xl text-white">
+            INTERIOR/EXTERIOR CLEANING
+          </p>
+        </div>
       </div>
       <Services />
     </div>

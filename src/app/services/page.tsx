@@ -64,15 +64,15 @@ export default function Services() {
       <div className="relative w-full max-w-7xl overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_30%] mx-4 p-6 bg-white text-black rounded-lg text-center">
+            <div key={index} className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_30%] mx-2 sm:mx-3 md:mx-4 p-4 sm:p-5 md:p-6 bg-white text-black rounded-lg text-center">
               {slide.type === "image" ? (
-                <Image src={slide.src} alt={slide.title} width={800} height={450} className="rounded-md mb-4" />
+                <Image src={slide.src} alt={slide.title} width={800} height={450} className="rounded-md mb-4 w-full h-auto" />
               ) : (
                 <video src={slide.src} autoPlay loop muted className="w-full rounded-md mb-4" style={{ maxHeight: '400px' }} />
               )}
-              <h2 className="text-2xl font-bold text-purple-700">{slide.title}</h2>
-              <h3 className="text-lg font-semibold text-gray-700">{slide.subtitle}</h3>
-              <ul className="text-gray-600 mt-2 list-disc list-inside text-left">
+              <h2 className="text-xl sm:text-2xl font-bold text-purple-700">{slide.title}</h2>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-700">{slide.subtitle}</h3>
+              <ul className="text-sm sm:text-base text-gray-600 mt-2 list-disc list-inside text-left">
                 {slide.description.split('.').filter(item => item.trim() !== '').map((item, i) => (
                   <li key={i}>{item.trim()}</li>
                 ))}
@@ -80,16 +80,18 @@ export default function Services() {
             </div>
           ))}
         </div>
-        {/* Controles de navegación */}
+        {/* Navigation controls */}
         <button
           onClick={goToPrevious}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-gray-800 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center text-sm sm:text-base md:text-lg"
+          aria-label="Previous slide"
         >
           &lt;
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-800 text-white rounded-full"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-gray-800 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center text-sm sm:text-base md:text-lg"
+          aria-label="Next slide"
         >
           &gt;
         </button>
