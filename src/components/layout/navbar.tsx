@@ -1,6 +1,5 @@
 'use client'
 import Image from "next/image";
-import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -27,6 +26,15 @@ export default function Navbar() {
         setIsMenuOpen(!isMenuOpen);
     };
 
+    // Smooth scroll function
+    const scrollToSection = (sectionId: string) => {
+        setIsMenuOpen(false); // Close mobile menu if open
+        const section = document.getElementById(sectionId);
+        if (section) {
+            section.scrollIntoView({ behavior: 'smooth' });
+        }
+    };
+
     return (
         <nav className="fixed top-0 left-0 w-full py-2 md:py-4 px-4 md:px-8 lg:px-12 z-10 bg-gradient-to-b from-purple-900/80 to-transparent backdrop-blur-sm">
             <div className="container mx-auto flex items-center justify-between">
@@ -45,11 +53,10 @@ export default function Navbar() {
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center">
-                    <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">HOME</Link>
-                    <Link href="/services" className="text-lg xl:text-xl text-white font-semibold mr-4">SERVICES</Link>
-                    <Link href="/contact" className="text-lg xl:text-xl text-white font-semibold">ABOUT</Link>
-                    <Link href="/login" className="text-lg xl:text-xl text-white font-semibold ml-4">REQUEST A QUOTE</Link>
-                    <button className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">CONTACT US</button>
+                    <button onClick={() => scrollToSection('home')} className="text-lg xl:text-xl text-white font-semibold mr-4">HOME</button>
+                    <button onClick={() => scrollToSection('services')} className="text-lg xl:text-xl text-white font-semibold mr-4">SERVICES</button>
+                    <button onClick={() => scrollToSection('about')} className="text-lg xl:text-xl text-white font-semibold">ABOUT</button>
+                    <button onClick={() => scrollToSection('form')} className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">CONTACT US</button>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -76,35 +83,28 @@ export default function Navbar() {
             {isMenuOpen && (
                 <div className="lg:hidden bg-purple-900/95 mt-2 py-4 px-4 rounded-lg">
                     <div className="flex flex-col space-y-4">
-                        <Link 
-                            href="/" 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700"
-                            onClick={() => setIsMenuOpen(false)}
+                        <button 
+                            onClick={() => scrollToSection('home')} 
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
                         >
                             HOME
-                        </Link>
-                        <Link 
-                            href="/services" 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700"
-                            onClick={() => setIsMenuOpen(false)}
+                        </button>
+                        <button 
+                            onClick={() => scrollToSection('services')} 
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
                         >
                             SERVICES
-                        </Link>
-                        <Link 
-                            href="/contact" 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700"
-                            onClick={() => setIsMenuOpen(false)}
+                        </button>
+                        <button 
+                            onClick={() => scrollToSection('about')} 
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
                         >
                             ABOUT
-                        </Link>
-                        <Link 
-                            href="/login" 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700"
-                            onClick={() => setIsMenuOpen(false)}
+                        </button>
+                        <button 
+                            onClick={() => scrollToSection('form')} 
+                            className="text-lg text-white font-semibold bg-purple-500 hover:bg-purple-600 py-2 px-4 rounded self-start"
                         >
-                            REQUEST A QUOTE
-                        </Link>
-                        <button className="text-lg text-white font-semibold bg-purple-500 hover:bg-purple-600 py-2 px-4 rounded self-start">
                             CONTACT US
                         </button>
                     </div>

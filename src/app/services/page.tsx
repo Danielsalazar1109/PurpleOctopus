@@ -1,10 +1,17 @@
 'use client'
-import React from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import useEmblaCarousel from 'embla-carousel-react'
 import Image from 'next/image'
 
 export default function Services() {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ align: 'start', loop: false })
+  const [emblaRef, emblaApi] = useEmblaCarousel({ 
+    align: 'center', 
+    loop: true,
+    dragFree: true,
+    containScroll: 'trimSnaps'
+  })
+  const [selectedIndex, setSelectedIndex] = useState(0)
+  const [scrollSnaps, setScrollSnaps] = useState<number[]>([])
 
   const slides = [
     {
@@ -31,7 +38,7 @@ export default function Services() {
     {
       type: "video",
       src: "/videos/cleaning.mp4",
-      title: "HOUSE CLEANING",
+      title: "COMMERCIAL CLEANING",
       subtitle: "Keep your home away from dirt.",
       description: "Deep cleaning for all household areas. Post-construction cleaning service. Vacuuming, wet and dry mopping."
     },
@@ -51,50 +58,114 @@ export default function Services() {
     }
   ];
 
-  const goToNext = () => {
-    if (emblaApi) emblaApi.scrollNext()
-  }
+  const onSelect = useCallback(() => {
+    if (!emblaApi) return
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+  }, [emblaApi])
 
-  const goToPrevious = () => {
+  const scrollTo = useCallback(
+    (index: number) => emblaApi && emblaApi.scrollTo(index),
+    [emblaApi]
+  )
+
+  useEffect(() => {
+    if (!emblaApi) return
+
+    onSelect()
+    setScrollSnaps(emblaApi.scrollSnapList())
+    emblaApi.on('select', onSelect)
+    emblaApi.on('reInit', onSelect)
+
+    return () => {
+      emblaApi.off('select', onSelect)
+      emblaApi.off('reInit', onSelect)
+    }
+  }, [emblaApi, onSelect])
+
+  const goToNext = useCallback(() => {
+    if (emblaApi) emblaApi.scrollNext()
+  }, [emblaApi])
+
+  const goToPrevious = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev()
-  }
+  }, [emblaApi])
 
   return (
-    <div className="flex justify-center items-center py-12">
+    <div className="flex flex-col justify-center items-center py-16 bg-gradient-to-b from-gray-100 to-white">
+      <h1 className="text-3xl md:text-4xl font-bold text-purple-700 mb-8 text-center">OUR SERVICES</h1>
+      
       <div className="relative w-full max-w-7xl overflow-hidden" ref={emblaRef}>
         <div className="flex">
           {slides.map((slide, index) => (
-            <div key={index} className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_30%] mx-2 sm:mx-3 md:mx-4 p-4 sm:p-5 md:p-6 bg-white text-black rounded-lg text-center">
-              {slide.type === "image" ? (
-                <Image src={slide.src} alt={slide.title} width={800} height={450} className="rounded-md mb-4 w-full h-auto" />
-              ) : (
-                <video src={slide.src} autoPlay loop muted className="w-full rounded-md mb-4" style={{ maxHeight: '400px' }} />
-              )}
-              <h2 className="text-xl sm:text-2xl font-bold text-purple-700">{slide.title}</h2>
-              <h3 className="text-base sm:text-lg font-semibold text-gray-700">{slide.subtitle}</h3>
+            <div 
+              key={index} 
+              className="flex-[0_0_100%] sm:flex-[0_0_50%] md:flex-[0_0_33.333%] lg:flex-[0_0_30%] mx-2 sm:mx-3 md:mx-4 p-4 sm:p-5 md:p-6 bg-white text-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center transform hover:-translate-y-1 transition-transform"
+            >
+              <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
+                {slide.type === "image" ? (
+                  <Image 
+                    src={slide.src} 
+                    alt={slide.title} 
+                    width={800} 
+                    height={450} 
+                    className="w-full h-full object-cover rounded-lg transition-transform duration-500 hover:scale-105" 
+                  />
+                ) : (
+                  <video 
+                    src={slide.src} 
+                    autoPlay 
+                    loop 
+                    muted 
+                    className="w-full h-full object-cover rounded-lg" 
+                  />
+                )}
+              </div>
+              <h2 className="text-xl sm:text-2xl font-bold text-purple-700 mb-2">{slide.title}</h2>
+              <h3 className="text-base sm:text-lg font-semibold text-gray-700 mb-3">{slide.subtitle}</h3>
               <ul className="text-sm sm:text-base text-gray-600 mt-2 list-disc list-inside text-left">
                 {slide.description.split('.').filter(item => item.trim() !== '').map((item, i) => (
-                  <li key={i}>{item.trim()}</li>
+                  <li key={i} className="mb-1">{item.trim()}</li>
                 ))}
               </ul>
             </div>
           ))}
         </div>
+        
         {/* Navigation controls */}
         <button
           onClick={goToPrevious}
-          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-gray-800 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center text-sm sm:text-base md:text-lg"
+          className="absolute left-2 sm:left-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center text-sm sm:text-base md:text-lg shadow-md transition-all duration-300 hover:scale-110 z-10"
           aria-label="Previous slide"
         >
-          &lt;
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+          </svg>
         </button>
         <button
           onClick={goToNext}
-          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-gray-800 text-white rounded-full w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 flex items-center justify-center text-sm sm:text-base md:text-lg"
+          className="absolute right-2 sm:right-4 top-1/2 transform -translate-y-1/2 p-2 sm:p-3 md:p-4 bg-purple-600 hover:bg-purple-700 text-white rounded-full w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 flex items-center justify-center text-sm sm:text-base md:text-lg shadow-md transition-all duration-300 hover:scale-110 z-10"
           aria-label="Next slide"
         >
-          &gt;
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+          </svg>
         </button>
+      </div>
+      
+      {/* Pagination dots */}
+      <div className="flex justify-center mt-6">
+        {scrollSnaps.map((_, index) => (
+          <button
+            key={index}
+            onClick={() => scrollTo(index)}
+            className={`mx-1 w-3 h-3 rounded-full transition-all duration-300 ${
+              index === selectedIndex 
+                ? 'bg-purple-600 w-6' 
+                : 'bg-gray-300 hover:bg-gray-400'
+            }`}
+            aria-label={`Go to slide ${index + 1}`}
+          />
+        ))}
       </div>
     </div>
   )

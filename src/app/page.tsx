@@ -1,10 +1,12 @@
 import Image from "next/image";
 import Services from "./services/page";
+import About from "./about/page";
+import Form from "./form/page";
 
 export default function Home() {
   return (
     <div className="w-full">
-      <div className="relative w-full h-screen">
+      <div id="home" className="relative w-full h-screen">
         <Image
           src="/images/mossSweeping.jpg"
           alt="Moss Removal"
@@ -26,7 +28,15 @@ export default function Home() {
           </p>
         </div>
       </div>
-      <Services />
+      <div id="services">
+        <Services />
+      </div>
+      <div id="about">
+        <About />
+      </div>
+      <div id="form">
+        <Form />
+      </div>
     </div>
   );
 }
