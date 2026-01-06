@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export default function Services() {
   const [emblaRef, emblaApi] = useEmblaCarousel({ 
-    align: 'center', 
+    align: 'start', 
     loop: true,
     dragFree: true,
     containScroll: 'trimSnaps'
@@ -106,7 +106,7 @@ export default function Services() {
           {slides.map((slide, index) => (
             <div 
               key={index} 
-              className="flex-[0_0_100%] sm:flex-[0_0_33%] md:flex-[0_0_33%] lg:flex-[0_0_33%] mx-2 sm:mx-3 md:mx-4 p-4 sm:p-5 md:p-6 bg-white text-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center transform hover:-translate-y-1 transition-transform"
+              className="flex-[0_0_100%] sm:flex-[0_0_calc(50%_-_1rem)] md:flex-[0_0_calc(50%_-_1rem)] lg:flex-[0_0_calc(50%_-_1rem)] mx-2 p-4 sm:p-5 md:p-6 bg-white text-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center transform hover:-translate-y-1 transition-transform"
             >
               <Link href={slide.link ?? '#'} className="block h-full">
                 <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
