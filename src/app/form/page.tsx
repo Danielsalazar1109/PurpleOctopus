@@ -12,6 +12,8 @@ type FormData = {
   name: string;
   email: string;
   service: string;
+  date: string;
+  time: string;
   message: string;
 };
 
@@ -22,6 +24,8 @@ export default function Form() {
     name: "",
     email: "",
     service: "",
+    date: "",
+    time: "",
     message: "",
   });
 
@@ -55,6 +59,10 @@ export default function Form() {
       setErrorMessage("Please select a service");
       return false;
     }
+    if (!formData.date) {
+      setErrorMessage("Please select a preferred date");
+      return false;
+    }
     if (!formData.message.trim()) {
       setErrorMessage("Please enter a message");
       return false;
@@ -77,6 +85,8 @@ export default function Form() {
         from_name: formData.name,
         from_email: formData.email,
         service: formData.service,
+        date: formData.date,
+        time: formData.time,
         message: formData.message,
       };
 
@@ -92,6 +102,8 @@ export default function Form() {
         name: "",
         email: "",
         service: "",
+        date: "",
+        time: "",
         message: "",
       });
     } catch (error) {
@@ -169,6 +181,32 @@ export default function Form() {
                 <option value="Painting">Painting</option>
                 <option value="Landscaping">Landscaping</option>
               </select>
+            </div>
+
+            <div>
+              <label htmlFor="date" className="font-medium">
+                Preferred Date
+              </label>
+              <input
+                type="date"
+                id="date"
+                value={formData.date}
+                onChange={handleChange}
+                className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="time" className="font-medium">
+                Preferred Time (optional)
+              </label>
+              <input
+                type="time"
+                id="time"
+                value={formData.time}
+                onChange={handleChange}
+                className="border border-gray-300 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-blue-400"
+              />
             </div>
 
             <div>

@@ -10,9 +10,11 @@
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
+    "@vscode/codicons": "^0.0.44",
     "embla-carousel": "^8.5.2",
     "embla-carousel-react": "^8.5.2",
     "framer-motion": "^12.11.0",
+    "lucide-react": "^0.562.0",
     "next": "15.2.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

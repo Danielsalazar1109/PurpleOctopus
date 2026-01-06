@@ -1,5 +1,6 @@
 'use client'
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -36,27 +37,29 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full py-2 md:py-4 px-4 md:px-8 lg:px-12 z-10 bg-gradient-to-b from-purple-900/80 to-transparent backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 w-full h-36 py-2 md:py-4 px-4 md:px-8 lg:px-12 z-10 bg-gradient-to-b from-purple-900/80 to-transparent backdrop-blur-sm">
             <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center">
+                    <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">
                     <Image
-                        src="https://custom-images.strikinglycdn.com/res/hrscywv4p/image/upload/c_limit,fl_lossy,h_300,w_300,f_auto,q_100/9161476/692697_163804.png"
+                        src="/images/logas.png"
                         alt="Purple Logo"
-                        className="h-12 w-12 md:h-16 md:w-16 lg:h-20 lg:w-20 mr-2"
-                        width={80}
-                        height={80}
+                        className="h-28 w-28 md:h-24 md:w-24 lg:h-28 lg:w-28 mr-2"
+                        width={250}
+                        height={250}
                     />
+                    </Link>
                     <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold">
-                        {isMobile ? "PURPLE" : "PURPLE OCTOPUS SERVICE"}
+                        {isMobile ? "PURPLE OCTOPUS SERVICE" : "PURPLE OCTOPUS SERVICE"}
                     </span>
                 </div>
 
                 {/* Desktop Navigation */}
                 <div className="hidden lg:flex items-center">
-                    <button onClick={() => scrollToSection('home')} className="text-lg xl:text-xl text-white font-semibold mr-4">HOME</button>
+                    <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">HOME</Link>
                     <button onClick={() => scrollToSection('services')} className="text-lg xl:text-xl text-white font-semibold mr-4">SERVICES</button>
                     <button onClick={() => scrollToSection('about')} className="text-lg xl:text-xl text-white font-semibold">ABOUT</button>
-                    <button onClick={() => scrollToSection('form')} className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">CONTACT US</button>
+                    <Link href="/book-now" className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">BOOK NOW</Link>
                 </div>
 
                 {/* Mobile Menu Button */}
@@ -82,31 +85,33 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isMenuOpen && (
                 <div className="lg:hidden bg-purple-900/95 mt-2 py-4 px-4 rounded-lg">
-                    <div className="flex flex-col space-y-4">
-                        <button 
-                            onClick={() => scrollToSection('home')} 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
+                    <div className="flex flex-col space-y-4 mx-auto">
+                        <Link
+                            href="/"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-center"
                         >
                             HOME
-                        </button>
+                        </Link>
                         <button 
                             onClick={() => scrollToSection('services')} 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-center"
                         >
                             SERVICES
                         </button>
                         <button 
                             onClick={() => scrollToSection('about')} 
-                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-left"
+                            className="text-lg text-white font-semibold py-2 border-b border-purple-700 text-center"
                         >
                             ABOUT
                         </button>
-                        <button 
-                            onClick={() => scrollToSection('form')} 
-                            className="text-lg text-white font-semibold bg-purple-500 hover:bg-purple-600 py-2 px-4 rounded self-start"
+                        <Link
+                            href="/book-now"
+                            onClick={() => setIsMenuOpen(false)}
+                            className="text-lg text-white font-semibold bg-purple-500 hover:bg-purple-600 py-2 px-4 rounded self-center"
                         >
-                            CONTACT US
-                        </button>
+                            BOOK NOW
+                        </Link>
                     </div>
                 </div>
             )}
