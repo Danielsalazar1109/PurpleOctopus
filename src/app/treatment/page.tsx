@@ -1,5 +1,25 @@
 import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
+import { FaqSection, type FaqItem } from '../../components/FaqSection'
+
+const faqs: FaqItem[] = [
+  {
+    q: 'Do you use chemicals? Are they safe?',
+    a: 'We use eco-friendly treatments that are safe for your roof, pets, plants, and the environment while still being highly effective at stopping moss regrowth.',
+  },
+  {
+    q: 'How long does moss removal last?',
+    a: 'After treatment, most roofs stay moss-free for 12–24 months, depending on conditions. Regular maintenance helps keep your roof protected long-term.',
+  },
+  {
+    q: 'Can moss grow back?',
+    a: 'Yes, moss can return over time, especially in shaded or damp areas. That’s why we apply treatments designed to slow regrowth and recommend routine maintenance.',
+  },
+  {
+    q: 'Does moss removal improve the look of my home?',
+    a: 'Absolutely. Removing moss instantly improves your roof’s appearance, making your home look cleaner, newer, and better maintained.',
+  },
+]
 
 
 export default function Treatment() {
@@ -34,6 +54,10 @@ export default function Treatment() {
           </h2>
         </div>
       </SplitSection>
+
+      {/* FAQ */}
+      <FaqSection title="WHAT YOU SHOULD KNOW" items={faqs} />
+
     </div>
   )
 }

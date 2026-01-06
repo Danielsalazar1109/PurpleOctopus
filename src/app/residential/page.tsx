@@ -23,7 +23,7 @@ export default function Residential() {
                 className="object-cover brightness-50"
               />
               <h1 className="relative z-10 px-6 text-4xl md:text-5xl font-bold text-white">
-                MOVE-IN/MOVE-OUT CLEANING
+                RESIDENTIAL CLEANING
               </h1>
             </section>
 

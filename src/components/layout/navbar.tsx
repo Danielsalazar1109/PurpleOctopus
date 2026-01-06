@@ -37,7 +37,7 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full h-36 py-2 md:py-4 px-4 md:px-8 lg:px-12 z-10 bg-gradient-to-b from-purple-900/80 to-transparent backdrop-blur-sm">
+        <nav className="fixed top-0 left-0 w-full h-36 py-2 md:py-4 px-4 md:px-8 lg:px-12 z-50 bg-gradient-to-b from-purple-900/95 to-purple-900/40 backdrop-blur-md shadow-lg">
             <div className="container mx-auto flex items-center justify-between">
                 <div className="flex items-center">
                     <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">

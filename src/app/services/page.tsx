@@ -20,49 +20,61 @@ export default function Services() {
       src: "/images/moss.jpg",
       link: "/removal",
       title: "MOSS REMOVAL",
-      subtitle: "Excess moss allows moisture to remain on the roof, causing irreparable damage.",
-      description: "Reduces long-term roof renovation costs. Improves the overall appearance of your home. Prevents fungal or bacterial growth that can be harmful to health."
     },
     {
       type: "video",
       src: "/videos/mossTreatment.mp4",
       link: "/treatment",
       title: "MOSS TREATMENT",
-      subtitle: "Keeping your roofs in perfect condition.",
-      description: "Annual treatments help prevent moss growth. Controls fungi and bacteria caused by moss. Extends the lifespan of your roof."
     },
     {
       type: "image",
       src: "/images/squeegee.jpg",
       link: "/windows",
       title: "WINDOWS CLEANING",
-      subtitle: "Don't let dirt block your view. Squeegee cleaning services.",
-      description: "Enhances visibility and natural light. Maintains the glass quality by preventing deterioration. Includes interior and exterior window cleaning."
     },
     {
       type: "video",
       src: "/videos/cleaning.mp4",
       link: "/office",
       title: "OFFICE CLEANING",
-      subtitle: "Keep your home away from dirt.",
-      description: "Deep cleaning for all household areas. Post-construction cleaning service. Vacuuming, wet and dry mopping."
     },
     {
       type: "image",
       src: "/images/gutter.jpg",
       link: "/gutter",
       title: "GUTTER CLEANING",
-      subtitle: "Proper gutter function ensures water flow.",
-      description: "Removes debris and stagnant waste. Prevents leaks and wall damage. Helps avoid rodent infestations."
     },
     {
       type: "video",
       src: "/videos/painting.mp4",
       link: "/painting",
       title: "PAINTING",
-      subtitle: "Keep your home looking brand new.",
-      description: "Refreshes your home’s appearance. Enhances lighting and atmosphere. Prevents fungi and dampness."
-    }
+    },
+    {
+      type: "image",
+      src: "/images/condo.jpeg",
+      link: "/condo",
+      title: "CONDO CLEANING",
+    },
+    {
+      type: "image",
+      src: "/images/moving.jpeg",
+      link: "/moving",
+      title: "MOVE IN/MOVE OUT CLEANING",
+    },
+    {
+      type: "image",
+      src: "/images/airbnb.jpeg",
+      link: "/airbnb",
+      title: "AIRBNB CLEANING",
+    },
+    {
+      type: "image",
+      src: "/images/residential.jpeg",
+      link: "/residential",
+      title: "RESIDENTIAL CLEANING",
+    },
   ];
 
   const onSelect = useCallback(() => {
@@ -106,7 +118,7 @@ export default function Services() {
           {slides.map((slide, index) => (
             <div 
               key={index} 
-              className="flex-[0_0_100%] sm:flex-[0_0_calc(50%_-_1rem)] md:flex-[0_0_calc(50%_-_1rem)] lg:flex-[0_0_calc(50%_-_1rem)] mx-2 p-4 sm:p-5 md:p-6 bg-white text-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center transform hover:-translate-y-1 transition-transform"
+              className="flex-[0_0_33%] sm:flex-[0_0_33%] md:flex-[0_0_33%] lg:flex-[0_0_33%] mx-2 p-4 sm:p-5 md:p-6 bg-white text-black rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300 text-center transform hover:-translate-y-1 transition-transform"
             >
               <Link href={slide.link ?? '#'} className="block h-full">
                 <div className="relative overflow-hidden rounded-lg mb-4 aspect-video">
@@ -128,13 +140,12 @@ export default function Services() {
                     />
                   )}
                 </div>
+                <div className='space-y-4'>
                 <h2 className="text-xl sm:text-2xl font-bold text-purple-700 mb-2">{slide.title}</h2>
-                <h3 className="text-base sm:text-lg font-semibold text-gray-700 mb-3">{slide.subtitle}</h3>
-                <ul className="text-sm sm:text-base text-gray-600 mt-2 list-disc list-outside pl-5 text-left space-y-2">
-                  {slide.description.split('.').filter(item => item.trim() !== '').map((item, i) => (
-                    <li key={i} className="leading-snug">{item.trim()}</li>
-                  ))}
-                </ul>
+                <Link href={slide.link ?? '#'}>   
+                <button className="bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-lg transition-colors duration-300">LEARN MORE</button> 
+                </Link>
+                </div>    
               </Link>
             </div>
           ))}

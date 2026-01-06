@@ -6,6 +6,8 @@ type IconTitleDescriptionProps = {
   description: string
   description2?: string
   className?: string
+  iconWrapperClassName?: string
+  titleClassName?: string
   layout?: 'row' | 'column'
 }
 
@@ -15,6 +17,8 @@ export function IconTitleDescription({
   description,
   description2,
   className,
+  iconWrapperClassName,
+  titleClassName,
   layout = 'row',
 }: IconTitleDescriptionProps) {
   const isColumn = layout === 'column'
@@ -30,17 +34,26 @@ export function IconTitleDescription({
   return (
     <div className={rootClassName}>
       <div
-        className={`flex h-14 w-14 items-center justify-center rounded-xl text-purple-700
-        [&>svg]:h-8 [&>svg]:w-8`}
+        className={[
+          'flex items-center justify-center rounded-xl text-purple-700 shrink-0',
+          'h-14 w-14 [&>svg]:h-8 [&>svg]:w-8',
+          iconWrapperClassName,
+        ]
+          .filter(Boolean)
+          .join(' ')}
       >
         {icon}
       </div>
 
       <div>
         <h3
-          className={`font-semibold text-gray-900 ${
-            isColumn ? 'text-xl md:text-2xl' : ''
-          }`}
+          className={[
+            'font-semibold text-gray-900',
+            isColumn ? 'text-xl md:text-2xl' : '',
+            titleClassName,
+          ]
+            .filter(Boolean)
+            .join(' ')}
         >
           {title}
         </h3>
