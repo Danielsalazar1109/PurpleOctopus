@@ -4,7 +4,7 @@ export default function Cor() {
   return (
     <section className="py-16 px-6 md:px-12 lg:px-16">
       <div className="mx-auto max-w-6xl">
-        <h2 className="text-3xl font-semibold mb-10 text-center">Peace of Mind</h2>
+        <h2 className="text-3xl font-semibold mb-10 text-center text-purple-600">PEACE OF MIND</h2>
 
         <div className="grid gap-10 md:grid-cols-2 items-start">
           <div className="space-y-4">

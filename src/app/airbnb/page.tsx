@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
 import { IconTitleDescription } from '@/components/IconTitleDescription'
+import { BookNowCTA } from '@/components/BookNowCTA'
 import {
   Bath,
   BedDouble,
@@ -91,6 +92,7 @@ export default function Airbnb() {
           </div>
         </div>
       </section>
+       <BookNowCTA />
       <section className="py-16 px-6 md:px-12 lg:px-16">
         <div className="mx-auto max-w-6xl">
           <h2 className="text-3xl font-semibold mb-10 text-center text-purple-500">OUR AIRBNB & VACATION RENTAL CLEANING PROCESS</h2>
@@ -135,6 +137,7 @@ export default function Airbnb() {
           </div>
         </div>
       </section>
+
     </div>
   )
 }

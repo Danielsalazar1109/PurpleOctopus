@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
 import { FaqSection, type FaqItem } from '../../components/FaqSection'
+import { BookNowCTA } from '@/components/BookNowCTA'
 
 const faqs: FaqItem[] = [
   {
@@ -39,7 +40,7 @@ export default function Removal() {
           className="object-cover brightness-50"
         />
         <h1 className="relative z-10 px-6 text-4xl md:text-5xl font-bold text-white">
-          Moss Removal
+          MOSS REMOVAL
         </h1>
       </section>
 
@@ -54,8 +55,10 @@ export default function Removal() {
           </h2>
         </div>
       </SplitSection>
+      
+          <BookNowCTA />
 
-      <FaqSection title="What You Should Know" items={faqs} />
+      <FaqSection title="WHAT YOU SHOULD KNOW" items={faqs} />
     </div>
   )
 }

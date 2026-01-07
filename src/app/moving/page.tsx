@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
+import { BookNowCTA } from '@/components/BookNowCTA'
 import { CheckCircle2, DollarSign, Home, Smile, Sparkles } from 'lucide-react'
 
 export default function Moving() {
@@ -35,9 +36,11 @@ export default function Moving() {
         </div>
       </SplitSection>
 
+            <BookNowCTA />
+
         <section className="py-16 px-6 md:px-12 lg:px-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-semibold mb-10 text-center">WHY CHOOSE US FOR MOVE-IN / MOVE-OUT CLEANING IN VICTORIA?</h2>
+          <h2 className="text-purple-600 text-3xl font-semibold mb-10 text-center">WHY CHOOSE US FOR MOVE-IN / MOVE-OUT CLEANING IN VICTORIA?</h2>
           <h2 className="text-xl text-center">Choosing Purple Octopus Service for your move-in or move-out cleaning means saving time, reducing stress, and ensuring professional results when it matters most. Moving can be overwhelming, and our experienced team is here to take the cleaning off your plate so you can focus on your transition.</h2>
 
           <div className="grid gap-4 mt-10">

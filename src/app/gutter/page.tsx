@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
 import { FaqSection, type FaqItem } from '../../components/FaqSection'
 import { IconTitleDescription } from '@/components/IconTitleDescription'
+import { BookNowCTA } from '@/components/BookNowCTA'
 import { Calendar, MessageCircle, Shield, ShieldCheck, User } from 'lucide-react'
 
 const faqs: FaqItem[] = [
@@ -65,8 +66,8 @@ export default function Gutter() {
       {/* Question */}
       <SplitSection imageSrc="/images/gutter1.jpeg" imageAlt="Removal cleaning">
         <div className="space-y-4">
-          <h2 className="text-base md:text-lg leading-relaxed text-gray-800">
-            Doing the dirty work so you do not have to.
+          <h2 className="text-base md:text-lg font-semibold leading-relaxed text-gray-800">
+            DOING THE DIRTY WORK SO YOU DO NOT HAVE TO.
           </h2>
           <h2 className="text-base md:text-lg leading-relaxed text-gray-800">
             At Purple Octopus Service, we specialize in keeping gutter systems clean, clear, and working properly for homes and businesses across Victoria and the surrounding areas. With Vancouver Island’s coastal climate bringing frequent rain, wind, and falling debris, well-maintained gutters are essential to controlling water flow and protecting your property from costly water damage.
@@ -78,9 +79,10 @@ export default function Gutter() {
       </SplitSection>
 
       <FaqSection title="WHAT YOU SHOULD KNOW" items={faqs} />
+          <BookNowCTA />
       <section className="py-16 px-6 md:px-12 lg:px-16">
         <div className="mx-auto max-w-6xl">
-          <h2 className="text-3xl font-semibold mb-10 text-center">PEACE OF MIND</h2>
+          <h2 className="text-3xl font-semibold mb-10 text-center text-purple-600">PEACE OF MIND</h2>
 
           <div className="grid gap-4">
             <IconTitleDescription
@@ -111,6 +113,7 @@ export default function Gutter() {
           </div>
         </div>
       </section>
+
     </div>
   )
 }

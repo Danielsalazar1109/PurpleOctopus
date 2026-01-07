@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Cor from "../../components/cor";
 import { SplitSection } from "../../components/SplitSection";
+import { BookNowCTA } from "@/components/BookNowCTA";
 export default function Office() {
   return (
     <div className="w-full">
@@ -16,7 +17,7 @@ export default function Office() {
           className="object-cover brightness-50"
         />
         <h1 className="relative z-10 px-6 text-4xl md:text-5xl font-bold text-white">
-          Office Services
+          OFFICE CLEANING
         </h1>
       </section>
 
@@ -33,8 +34,8 @@ export default function Office() {
       {/* Reasons */}
       <section className="py-16 px-6 md:px-12 lg:px-16">
         <div className="mx-auto max-w-6xl">
-        <h2 className="text-4xl font-bold mb-10 text-center">
-          Why Choose Purple Octopus Service
+        <h2 className="text-4xl text-purple-600 font-bold mb-10 text-center">
+          WHY CHOOSE PURPLE OCTOPUS SERVICE?
         </h2>
 
         <div className="grid md:grid-cols-2 gap-10 items-center ">
@@ -72,9 +73,11 @@ export default function Office() {
         </div>
         </div>
       </section>
+       <BookNowCTA />
 
       {/* Peace of mind */}
       <Cor />
+
     </div>
   );
 }

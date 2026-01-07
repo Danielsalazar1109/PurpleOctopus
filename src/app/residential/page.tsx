@@ -1,5 +1,6 @@
 import { SplitSection } from "@/components/SplitSection";
 import { IconTitleDescription } from "@/components/IconTitleDescription";
+import { BookNowCTA } from "@/components/BookNowCTA";
 import {
   Calendar,
   CalendarDays,
@@ -48,9 +49,11 @@ export default function Residential() {
         </div>
       </SplitSection>
 
+         <BookNowCTA />
+
       {/* Our Services */}
       <section className="py-16 px-6 md:px-12 lg:px-16 bg-gray-50">
-        <h2 className="text-4xl font-bold mb-10 text-center">OUR SERVICES</h2>
+        <h2 className="text-purple-600 text-4xl font-bold mb-10 text-center">OUR SERVICES</h2>
 
         <div className="mx-auto mt-10 grid max-w-6xl gap-8 md:grid-cols-3">
           <div className="rounded-2xl bg-white p-6 shadow-lg">

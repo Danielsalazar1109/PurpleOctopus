@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import { SplitSection } from '../../components/SplitSection'
 import { FaqSection, type FaqItem } from '../../components/FaqSection'
+import { BookNowCTA } from '@/components/BookNowCTA'
 
 const faqs: FaqItem[] = [
   {
@@ -54,6 +55,7 @@ export default function Treatment() {
           </h2>
         </div>
       </SplitSection>
+          <BookNowCTA />
 
       {/* FAQ */}
       <FaqSection title="WHAT YOU SHOULD KNOW" items={faqs} />
