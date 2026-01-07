@@ -227,16 +227,19 @@ export default function Form() {
                   id="service"
                   value={formData.service}
                   onChange={handleChange}
-                  className="mt-1 border border-white/20 bg-white/10 text-white p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
+                  className="mt-1 text-white border border-white/20 bg-white/10 p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-purple-300"
                 >
-                  <option value="">-- Select a service --</option>
-                  <option value="Moss Removal">Moss Removal</option>
-                  <option value="Moss Treatment">Moss Treatment</option>
-                  <option value="Window Cleaning">Window Cleaning</option>
-                  <option value="Commercial Cleaning">Commercial Cleaning</option>
-                  <option value="Gutter Cleaning">Gutter Cleaning</option>
-                  <option value="Painting">Painting</option>
-                  <option value="Landscaping">Landscaping</option>
+                  <option value="" className="bg-purple-500">-- Select a service --</option>
+                  <option value="Office Cleaning" className="bg-purple-500">Office Cleaning</option>
+                  <option value="Residential Cleaning" className="bg-purple-500">Residential Cleaning</option>
+                  <option value="Condo Cleaning" className="bg-purple-500">Condo Cleaning</option>
+                  <option value="Window Cleaning" className="bg-purple-500">Window Cleaning</option>
+                  <option value="Moving" className="bg-purple-500">Move In/Move Out cleaning</option>
+                  <option value="Gutter Cleaning" className="bg-purple-500">Gutter Cleaning</option>
+                  <option value="Painting" className="bg-purple-500">Painting</option>
+                  <option value="Airbnb" className="bg-purple-500">AirBnb</option>
+                  <option value="Moss Removal" className="bg-purple-500">Moss Removal</option>
+                  <option value="Moss Treatment" className="bg-purple-500">Moss Treatment</option>
                 </select>
               </div>
 

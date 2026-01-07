@@ -38,7 +38,7 @@ export default function Navbar() {
 
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-purple-900/95 to-purple-900/40 backdrop-blur-md shadow-lg">
-            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8 lg:px-12">
+            <div className="mx-auto flex max-w-6xl md:w-full items-center justify-between px-4 py-3 md:px-8 lg:px-12">
                 <div className="flex items-center gap-3 min-w-0">
                     <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">
                     <Image
@@ -49,7 +49,7 @@ export default function Navbar() {
                         height={250}
                     />
                     </Link>
-                    <span className="text-sm sm:text-base md:text-2xl lg:text-3xl text-white font-semibold leading-tight break-words">
+                    <span className="text-xl sm:text-2xl md:text-2xl lg:text-3xl text-white font-semibold leading-tight break-words">
                         {isMobile ? "PURPLE OCTOPUS SERVICE" : "PURPLE OCTOPUS SERVICE"}
                     </span>
                 </div>

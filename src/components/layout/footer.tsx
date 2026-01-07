@@ -16,17 +16,17 @@ export default function Footer() {
 
   return (
     <footer className="mt-16 bg-gradient-to-b from-purple-700 to-purple-900 text-white">
-      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-12">
-        <div className="grid gap-10 md:grid-cols-3">
+      <div className="container mx-auto px-4 md:px-8 lg:px-12 py-6">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
 
           {/* Columna 1 - Brand */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left">
+          <div className="flex flex-col lg:flex-row sm:flex-col items-center text-center md:items-start md:text-left">
             <Image
               src="/images/logas.png"
               alt="Purple Octopus Service"
               width={120}
               height={120}
-              className="h-20 w-20 sm:h-24 sm:w-24"
+              className="h-20 w-20 sm:h-24 sm:w-24 mx-auto"
             />
             <div className="mt-4 flex flex-col space-y-2">
             <p className="text-2xl font-semibold">Purple Octopus Service</p>
@@ -35,7 +35,7 @@ export default function Footer() {
           </div>
 
           {/* Columna 2 - Info */}
-          <div className="space-y-6 text-center md:text-left">
+          <div className="space-y-6 text-center md:text-left md:mt-12 lg:mt-2">
             <a
               href={gmailHref}
               target="_blank"
@@ -60,7 +60,7 @@ export default function Footer() {
             <h3 className="text-lg text-center font-semibold tracking-wider text-white/90">
               FIND US
             </h3>
-            <div className="mt-5 flex justify-center md:justify-start gap-4">
+            <div className="mt-5 flex justify-center gap-4">
               <a
                 href={instagramHref}
                 target="_blank"
@@ -86,7 +86,7 @@ export default function Footer() {
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/10">
+      <div className="border-t-4 border-white/10 ">
         <div className="container mx-auto px-4 md:px-8 lg:px-12 py-4">
             <p className="text-center">© {year} Purple Octopus Service. All rights reserved.</p>
         </div>
