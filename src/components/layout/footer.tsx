@@ -20,22 +20,22 @@ export default function Footer() {
         <div className="grid gap-10 md:grid-cols-3">
 
           {/* Columna 1 - Brand */}
-          <div className="flex flex-row items-center md:items-start text-center md:text-left">
+          <div className="flex flex-col items-center text-center md:items-start md:text-left">
             <Image
               src="/images/logas.png"
               alt="Purple Octopus Service"
               width={120}
               height={120}
-              className="h-24 w-24"
+              className="h-20 w-20 sm:h-24 sm:w-24"
             />
-            <div className="flex flex-col space-y-2 mx-auto">
-            <p className="mt-4 text-2xl font-semibold">Purple Octopus Service</p>
+            <div className="mt-4 flex flex-col space-y-2">
+            <p className="text-2xl font-semibold">Purple Octopus Service</p>
             <p className="text-white/80">Interior & Exterior Cleaning</p>
             </div>
           </div>
 
           {/* Columna 2 - Info */}
-          <div className="space-y-6 text-center md:text-left mx-auto">
+          <div className="space-y-6 text-center md:text-left">
             <a
               href={gmailHref}
               target="_blank"
@@ -43,7 +43,7 @@ export default function Footer() {
               className="flex items-center justify-center md:justify-start gap-3 hover:text-white transition"
             >
               <Mail className="h-6 w-6" />
-              <span className="text-lg">{gmail}</span>
+              <span className="text-lg break-all">{gmail}</span>
             </a>
 
             <a
@@ -60,7 +60,7 @@ export default function Footer() {
             <h3 className="text-lg text-center font-semibold tracking-wider text-white/90">
               FIND US
             </h3>
-            <div className="mt-5 flex justify-center md:justify-start gap-4 mx-43">
+            <div className="mt-5 flex justify-center md:justify-start gap-4">
               <a
                 href={instagramHref}
                 target="_blank"

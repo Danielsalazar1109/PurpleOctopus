@@ -37,19 +37,19 @@ export default function Navbar() {
     };
 
     return (
-        <nav className="fixed top-0 left-0 w-full h-36 py-2 md:py-4 px-4 md:px-8 lg:px-12 z-50 bg-gradient-to-b from-purple-900/95 to-purple-900/40 backdrop-blur-md shadow-lg">
-            <div className="container mx-auto flex items-center justify-between">
-                <div className="flex items-center">
+        <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-purple-900/95 to-purple-900/40 backdrop-blur-md shadow-lg">
+            <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3 md:px-8 lg:px-12">
+                <div className="flex items-center gap-3 min-w-0">
                     <Link href="/" className="text-lg xl:text-xl text-white font-semibold mr-4">
                     <Image
                         src="/images/logas.png"
                         alt="Purple Logo"
-                        className="h-28 w-28 md:h-24 md:w-24 lg:h-28 lg:w-28 mr-2"
+                        className="h-14 w-14 sm:h-16 sm:w-16 lg:h-20 lg:w-20 shrink-0"
                         width={250}
                         height={250}
                     />
                     </Link>
-                    <span className="text-xl sm:text-2xl md:text-3xl lg:text-4xl text-white font-semibold">
+                    <span className="text-sm sm:text-base md:text-2xl lg:text-3xl text-white font-semibold leading-tight break-words">
                         {isMobile ? "PURPLE OCTOPUS SERVICE" : "PURPLE OCTOPUS SERVICE"}
                     </span>
                 </div>
