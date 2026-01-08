@@ -11,8 +11,8 @@ export default function Footer() {
   const phoneHref = "tel:+12508841073"
   const gmailHref = "mailto:" + gmail
 
-  const instagramHref = "https://www.instagram.com/"
-  const facebookHref = "https://www.facebook.com/"
+  const instagramHref = "https://www.instagram.com/purpleoctopus_bc/"
+  const facebookHref = "https://www.facebook.com/PurpleoctopusBC?mibextid=wwXIfr&rdid=iVQ94ZwXarbrFtWF&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1C24Ydu3KN%2F%3Fmibextid%3DwwXIfr#"
 
   return (
     <footer className="mt-16 bg-gradient-to-b from-purple-700 to-purple-900 text-white">

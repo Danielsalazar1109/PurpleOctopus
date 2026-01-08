@@ -139,8 +139,8 @@ export default function Form() {
   return (
     <div className="min-h-screen px-6 py-10">
          <div className="flex flex-col mb-6">
-        <h2 className="text-center text-2xl font-bold mb-6">CONTACT US TODAY TO GET YOUR FREE QUOTE</h2>
-        <p className="text-center text-2xl">We are here for anything you need - Book a time for a walk-through of your facility to discuss your cleaning needs and get a quote. </p>
+        <h2 className="text-center text-2xl font-bold mb-6 lg:mx-25 md:mx-30">CONTACT US TO GET YOUR FREE QUOTE</h2>
+        <p className="text-center text-2xl lg:mx-40 md:mx-45">We are here for anything you need - Book a time for a walk-through of your facility to discuss your cleaning needs and get a quote. </p>
         </div>
       <div className="mx-auto w-full max-w-6xl grid gap-8 md:grid-cols-2 items-stretch">
         {/* Left: form card */}
