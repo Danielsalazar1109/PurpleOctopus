@@ -132,6 +132,7 @@ export default function Navbar() {
                         )}
                     </div>
                     <button onClick={() => scrollToSection('about')} className="text-lg xl:text-xl text-white font-semibold">ABOUT</button>
+                    <Link href="/gallery" className="text-lg xl:text-xl text-white font-semibold ml-4">GALLERY</Link>
                     <Link href="/book-now" className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">BOOK NOW</Link>
                 </div>
 
@@ -205,6 +206,12 @@ export default function Navbar() {
                                 </div>
                             )}
                         </div>
+                           <Link
+                            href="/gallery" 
+                            className="text-lg text-white font-semibold py-3 border-b border-purple-700 text-center"
+                        >
+                            GALLERY
+                        </Link>
                         <button 
                             onClick={() => scrollToSection('about')} 
                             className="text-lg text-white font-semibold py-3 border-b border-purple-700 text-center"

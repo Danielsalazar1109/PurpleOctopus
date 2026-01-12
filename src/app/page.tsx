@@ -2,30 +2,38 @@ import Image from "next/image";
 import Services from "./services/page";
 import About from "./about/page";
 import Form from "./form/page";
+import { BookNowCTA } from "@/components/BookNowCTA";
 
 export default function Home() {
   return (
     <div className="w-full">
       <div id="home" className="relative w-full h-screen">
         <Image
-          src="/images/mossSweeping.jpg"
-          alt="Moss Removal"
+          src="/images/portada.jpeg"
+          alt="portada"
           fill
           sizes="100vw"
-          className="opacity-80 brightness-50"
+          className=" brightness-50"
           style={{
             objectFit: 'cover',
             zIndex: -1
           }}
           priority
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+        <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center lg:mt-72 md:mt-52 mt-72">
           <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mb-4">
-            IMPROVING HOMES.
+            CLEANING SERVICES
           </h1>
           <p className="text-xl md:text-2xl text-white">
-            INTERIOR/EXTERIOR CLEANING
+            VICTORIA, BC
           </p>
+            <p className="text-xl md:text-2xl text-white">
+            ECO-FRIENDLY & HASSLE-FREE
+          </p>
+            <p className="text-xl md:text-2xl text-white">
+            RESIDENTIAL & COMMERCIAL CLEANING
+          </p>
+            <BookNowCTA />
         </div>
       </div>
       <div id="services">
