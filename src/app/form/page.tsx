@@ -12,8 +12,8 @@ const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || "YOUR_PUBLIC_KE
 // TODO: replace with your real contact details
 const CONTACT_PHONE_DISPLAY = "250-884-1073";
 const CONTACT_PHONE_HREF = "tel:+12508841073";
-const CONTACT_EMAIL_DISPLAY = "info@purpleoctopusservice.com";
-const CONTACT_EMAIL_HREF = "mailto:info@purpleoctopusservice.com";
+const CONTACT_EMAIL_DISPLAY = "purpleoctopusservice@gmail.com";
+const CONTACT_EMAIL_HREF = "mailto:purpleoctopusservice@gmail.com";
 
 type FormData = {
   name: string;
