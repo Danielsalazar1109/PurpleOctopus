@@ -17,7 +17,7 @@ export default function Footer() {
   return (
     <footer className="mt-16 bg-gradient-to-b from-purple-700 to-purple-900 text-white">
       <div className="container mx-auto px-4 md:px-8 lg:px-12 py-6">
-        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3 md:gap-20">
+        <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-[30%_30%_10%_20%] md:gap-10 items-start">
 
           {/* Columna 1 - Brand */}
           <div className="flex flex-col lg:flex-row sm:flex-col items-center text-center md:items-start md:text-left">
@@ -80,17 +80,33 @@ export default function Footer() {
                 <Facebook className="h-5 w-5" />
               </a>
             </div>
+             <div className="container mx-auto px-4 md:px-8 lg:px-12 pb-6">
+</div>
           </div>
+
+           <div className="flex lg:justify-end py-6 mx-auto">
+    <Image
+      src="/images/worksafe.jpeg"
+      alt="WorkSafe BC"
+      width={140}
+      height={60}
+      className="h-10 w-auto"
+    />
+  </div>
 
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t-4 border-white/10 ">
-        <div className="container mx-auto px-4 md:px-8 lg:px-12 py-4">
-            <p className="text-center">© {year} Purple Octopus Service. All rights reserved.</p>
-        </div>
-      </div>
+      <div className="border-t-4 border-white/10">
+  <div className="container mx-auto px-4 md:px-8 lg:px-12 py-6 relative flex items-center mb-auto">
+    
+    {/* Texto centrado */}
+    <p className="absolute left-1/2 -translate-x-1/2 text-center">
+      © {year} Purple Octopus Service. All rights reserved.
+    </p>
+  </div>
+</div>
     </footer>
   )
 }
