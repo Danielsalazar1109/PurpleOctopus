@@ -84,13 +84,20 @@ export default function Footer() {
 </div>
           </div>
 
-           <div className="flex lg:justify-end py-6 mx-auto">
+           <div className="flex flex-col items-center space-y-6 lg:justify-end py-1 mx-auto">
     <Image
       src="/images/worksafe.jpeg"
       alt="WorkSafe BC"
       width={140}
       height={60}
       className="h-10 w-auto"
+    />
+    <Image
+      src="/images/zensurance.png"
+      alt="Zensurance"
+      width={140}
+      height={10}
+      className="h-10"
     />
   </div>
 

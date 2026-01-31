@@ -61,15 +61,6 @@ export default function Navbar() {
         });
     };
 
-    // Smooth scroll function
-    const scrollToSection = (sectionId: string) => {
-        setIsMenuOpen(false); // Close mobile menu if open
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'smooth' });
-        }
-    };
-
     return (
         <nav className="fixed top-0 left-0 w-full z-50 bg-gradient-to-b from-purple-900/95 to-purple-900/40 backdrop-blur-md shadow-lg">
             <div className="mx-auto flex max-w-6xl lg:max-w-none lg:w-full items-center justify-between px-4 py-3 md:px-8 lg:px-4">
@@ -131,7 +122,7 @@ export default function Navbar() {
                             </div>
                         )}
                     </div>
-                    <button onClick={() => scrollToSection('about')} className="text-lg xl:text-xl text-white font-semibold">ABOUT</button>
+                    <Link href="/#about" className="text-lg xl:text-xl text-white font-semibold">ABOUT</Link>
                     <Link href="/gallery" className="text-lg xl:text-xl text-white font-semibold ml-4">GALLERY</Link>
                     <Link href="/book-now" className="text-lg xl:text-xl text-white font-semibold ml-4 bg-purple-500 hover:bg-purple-600 text-white py-2 px-4 rounded">BOOK NOW</Link>
                 </div>
@@ -212,12 +203,13 @@ export default function Navbar() {
                         >
                             GALLERY
                         </Link>
-                        <button 
-                            onClick={() => scrollToSection('about')} 
+                        <Link
+                            href="/#about"
+                            onClick={() => setIsMenuOpen(false)}
                             className="text-lg text-white font-semibold py-3 border-b border-purple-700 text-center"
                         >
                             ABOUT
-                        </button>
+                        </Link>
                         <Link
                             href="/book-now"
                             onClick={() => setIsMenuOpen(false)}
