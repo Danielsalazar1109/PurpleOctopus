@@ -6,6 +6,8 @@ import { useEffect } from "react";
 export default function Gallery() {
 
     const [imagesPerPage, setImagesPerPage] = useState(9);
+    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
 
 useEffect(() => {
   const update = () => {
@@ -40,6 +42,7 @@ const [page, setPage] = useState(0);
       "/images/guttergallery16.jpeg",
       "/images/guttergallery17.jpeg",
       "/images/guttergallery18.jpeg",
+      "/images/guttergallery19.jpeg",
     ],
     "PAINTING": [
       "/images/paintinggallery1.jpeg",
@@ -80,6 +83,7 @@ const [page, setPage] = useState(0);
       "/images/removalgallery21.jpeg",
       "/images/removalgallery22.jpeg",
       "/images/removalgallery23.jpeg",
+      "/images/removalgallery24.jpeg",
     ],
 
     "WINDOWS CLEANING": [
@@ -87,6 +91,15 @@ const [page, setPage] = useState(0);
     ],
     "MOSS TREATMENT": [
       "/images/treatmentgallery1.jpeg",
+      "/images/treatmentgallery2.jpeg",
+      "/images/treatmentgallery3.jpeg",
+      "/images/treatmentgallery4.jpeg",
+      "/images/treatmentgallery5.jpeg",
+      "/images/treatmentgallery6.jpeg",
+    ],
+    "RESIDENTIAL CLEANING": [
+      "/images/residentialgallery1.jpeg",
+      "/images/residentialgallery2.jpeg",
     ],
   };
 
@@ -143,6 +156,7 @@ const visibleImages = images.slice(
               {visibleImages.map((src, i) => (
                 <div
                   key={i}
+                  onClick={() => setSelectedImage(src)}
                   className="relative h-40 rounded-2xl overflow-hidden
                              border border-purple-400/30"
                 >
@@ -187,6 +201,33 @@ const visibleImages = images.slice(
         </div>
 
       </div>
+      {selectedImage && (
+  <div
+    className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm
+               flex items-center justify-center px-4"
+    onClick={() => setSelectedImage(null)}
+  >
+    <div
+      className="relative max-w-5xl w-full h-[80vh]"
+      onClick={(e) => e.stopPropagation()}
+    >
+      <button
+        onClick={() => setSelectedImage(null)}
+        className="absolute -top-10 right-0 text-white text-2xl"
+      >
+        ✕
+      </button>
+
+      <Image
+        src={selectedImage}
+        alt="Gallery image"
+        fill
+        className="object-contain rounded-2xl"
+      />
+    </div>
+  </div>
+)}
+
     </section>
   );
 };
