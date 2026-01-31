@@ -6,7 +6,7 @@ import { useEffect } from "react";
 export default function Gallery() {
 
     const [imagesPerPage, setImagesPerPage] = useState(9);
-    const [selectedImage, setSelectedImage] = useState<string | null>(null);
+    const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
 
 useEffect(() => {
@@ -156,7 +156,7 @@ const visibleImages = images.slice(
               {visibleImages.map((src, i) => (
                 <div
                   key={i}
-                  onClick={() => setSelectedImage(src)}
+                  onClick={() => setSelectedIndex(page * IMAGES_PER_PAGE + i)}
                   className="relative h-40 rounded-2xl overflow-hidden
                              border border-purple-400/30"
                 >
@@ -201,29 +201,59 @@ const visibleImages = images.slice(
         </div>
 
       </div>
-      {selectedImage && (
+      {selectedIndex !== null && (
   <div
     className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm
                flex items-center justify-center px-4"
-    onClick={() => setSelectedImage(null)}
+    onClick={() => setSelectedIndex(null)}
   >
     <div
-      className="relative max-w-5xl w-full h-[80vh]"
+      className="relative max-w-6xl w-full h-[80vh] flex items-center"
       onClick={(e) => e.stopPropagation()}
     >
+      {/* LEFT ARROW */}
       <button
-        onClick={() => setSelectedImage(null)}
+        onClick={() =>
+          setSelectedIndex(i => (i! > 0 ? i! - 1 : i))
+        }
+        disabled={selectedIndex === 0}
+        className="absolute left-0 md:-left-14 text-white text-4xl
+                   disabled:opacity-30"
+      >
+        ‹
+      </button>
+
+      {/* IMAGE */}
+      <div className="relative w-full h-full">
+        <Image
+          src={images[selectedIndex]}
+          alt="Gallery image"
+          fill
+          className="object-contain rounded-2xl"
+        />
+      </div>
+
+      {/* RIGHT ARROW */}
+      <button
+        onClick={() =>
+          setSelectedIndex(i =>
+            i! < images.length - 1 ? i! + 1 : i
+          )
+        }
+        disabled={selectedIndex === images.length - 1}
+        className="absolute right-0 md:-right-14 text-white text-4xl
+                   disabled:opacity-30"
+      >
+        ›
+      </button>
+
+      {/* CLOSE */}
+      <button
+        onClick={() => setSelectedIndex(null)}
         className="absolute -top-10 right-0 text-white text-2xl"
       >
         ✕
       </button>
-
-      <Image
-        src={selectedImage}
-        alt="Gallery image"
-        fill
-        className="object-contain rounded-2xl"
-      />
     </div>
   </div>
 )}
