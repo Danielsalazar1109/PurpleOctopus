@@ -58,6 +58,7 @@ const [page, setPage] = useState(0);
       "/images/paintinggallery11.jpeg",
       "/images/paintinggallery12.jpeg",
       "/images/paintinggallery13.jpeg",
+      "/images/paintinggallery14.jpeg",
     ],
     "MOSS REMOVAL": [
       "/images/removalgallery1.jpeg",
@@ -84,6 +85,7 @@ const [page, setPage] = useState(0);
       "/images/removalgallery22.jpeg",
       "/images/removalgallery23.jpeg",
       "/images/removalgallery24.jpeg",
+      "/images/removalgallery25.jpeg",
     ],
 
     "WINDOWS CLEANING": [
@@ -100,6 +102,7 @@ const [page, setPage] = useState(0);
     "RESIDENTIAL CLEANING": [
       "/images/residentialgallery1.jpeg",
       "/images/residentialgallery2.jpeg",
+      "/images/residentialgallery3.jpeg",
     ],
   };
 
