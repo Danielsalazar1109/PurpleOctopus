@@ -111,6 +111,7 @@ const [page, setPage] = useState(0);
       "/images/residentialgallery3.jpeg",
       "/images/residentialgallery4.jpeg",
       "/images/residentialgallery5.jpeg",
+      "/images/residentialgallery6.jpeg",
     ],
     "MOVE IN / MOVE OUT CLEANING": [
       "/images/movinggallery1.jpeg",
