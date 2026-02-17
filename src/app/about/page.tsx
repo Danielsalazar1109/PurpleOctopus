@@ -13,7 +13,8 @@ export default function About() {
   
   return (
     <div className="flex flex-col md:flex-row gap-8 items-center justify-center p-8 min-h-screen bg-gray-100">
-        
+
+      <div> 
       <motion.div
         ref={imageRef}
         initial={{ opacity: 0, x: -50 }}
@@ -21,13 +22,31 @@ export default function About() {
         transition={{ duration: 1 }}
       >
         <Image
-          src="https://images.unsplash.com/photo-1489370603040-dc6c28a1d37a?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&h=1500&w=2000&fit=clip&fm=jpg"
+          src="/images/about.jpeg"
           alt="About page"
           width={500}
           height={500}
           className="rounded-xl shadow-lg object-cover"
         />
       </motion.div>
+      <h2 className="text-3xl md:text-4xl font-bold text-purple-700 mt-4 text-center"> WHY CHOOSE US? </h2>
+      <p>WorkSafe BC Insured, $1 Million Liability Coverage, and Competitive Costs.</p>
+      <Image
+          src="/images/zensurance.png"
+          alt="About page"
+          width={500}
+          height={500}
+          className="rounded-xl shadow-lg object-cover"
+        />
+        <Image
+          src="/images/worksafe.jpeg"
+          alt="About page"
+          width={500}
+          height={500}
+          className="rounded-xl shadow-lg object-cover"
+        />
+
+      </div>
 
       <motion.div
         className="max-w-lg text-center md:text-left"
