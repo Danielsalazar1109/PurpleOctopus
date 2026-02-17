@@ -90,6 +90,12 @@ const [page, setPage] = useState(0);
 
     "WINDOWS CLEANING": [
       "/images/windowsgallery1.jpeg",
+      "/images/windowsgallery2.jpeg",
+      "/images/windowsgallery3.jpeg",
+      "/images/windowsgallery4.jpeg",
+      "/images/windowsgallery5.jpeg",
+      "/images/windowsgallery6.jpeg",
+      "/images/windowsgallery7.jpeg",
     ],
     "MOSS TREATMENT": [
       "/images/treatmentgallery1.jpeg",
@@ -103,6 +109,12 @@ const [page, setPage] = useState(0);
       "/images/residentialgallery1.jpeg",
       "/images/residentialgallery2.jpeg",
       "/images/residentialgallery3.jpeg",
+      "/images/residentialgallery4.jpeg",
+      "/images/residentialgallery5.jpeg",
+    ],
+    "MOVE IN / MOVE OUT CLEANING": [
+      "/images/movinggallery1.jpeg",
+      "/images/movinggallery2.jpeg",
     ],
   };
 
