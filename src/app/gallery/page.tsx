@@ -108,6 +108,7 @@ const [page, setPage] = useState(0);
       "/images/treatmentgallery4.jpeg",
       "/images/treatmentgallery5.jpeg",
       "/images/treatmentgallery6.jpeg",
+      "/images/treatmentgallery7.jpeg",
     ],
     "RESIDENTIAL CLEANING": [
       "/images/residentialgallery1.jpeg",
