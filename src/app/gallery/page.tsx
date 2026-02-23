@@ -43,6 +43,7 @@ const [page, setPage] = useState(0);
       "/images/guttergallery17.jpeg",
       "/images/guttergallery18.jpeg",
       "/images/guttergallery19.jpeg",
+      "/images/guttergallery20.jpeg",
     ],
     "PAINTING": [
       "/images/paintinggallery1.jpeg",
@@ -88,6 +89,7 @@ const [page, setPage] = useState(0);
       "/images/removalgallery25.jpeg",
       "/images/removalgallery26.jpeg",
       "/images/removalgallery27.jpeg",
+      "/images/removalgallery28.jpeg",
     ],
 
     "WINDOWS CLEANING": [
