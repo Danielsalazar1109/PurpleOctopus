@@ -90,6 +90,7 @@ const [page, setPage] = useState(0);
       "/images/removalgallery26.jpeg",
       "/images/removalgallery27.jpeg",
       "/images/removalgallery28.jpeg",
+      "/images/removalgallery29.jpeg",
     ],
 
     "WINDOWS CLEANING": [
