@@ -44,6 +44,8 @@ const [page, setPage] = useState(0);
       "/images/guttergallery18.jpeg",
       "/images/guttergallery19.jpeg",
       "/images/guttergallery20.jpeg",
+      "/images/guttergallery21.jpeg",
+      "/images/guttergallery22.jpeg",
     ],
     "PAINTING": [
       "/images/paintinggallery1.jpeg",
@@ -122,6 +124,10 @@ const [page, setPage] = useState(0);
     "MOVE IN / MOVE OUT CLEANING": [
       "/images/movinggallery1.jpeg",
       "/images/movinggallery2.jpeg",
+      "/images/movinggallery3.jpeg",
+      "/images/movinggallery4.jpeg",
+      "/images/movinggallery5.jpeg",
+      "/images/movinggallery6.jpeg",
     ],
   };
 
