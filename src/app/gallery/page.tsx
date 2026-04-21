@@ -7,6 +7,7 @@ export default function Gallery() {
 
     const [imagesPerPage, setImagesPerPage] = useState(9);
     const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+    const [shuffledImages, setShuffledImages] = useState<string[]>([]);
 
 
 useEffect(() => {
@@ -18,6 +19,7 @@ useEffect(() => {
   window.addEventListener("resize", update);
   return () => window.removeEventListener("resize", update);
 }, []);
+
 
     const IMAGES_PER_PAGE = imagesPerPage;
 
@@ -46,6 +48,10 @@ const [page, setPage] = useState(0);
       "/images/guttergallery20.jpeg",
       "/images/guttergallery21.jpeg",
       "/images/guttergallery22.jpeg",
+      "/images/guttergallery23.jpeg",
+      "/images/guttergallery24.jpeg",
+      "/images/guttergallery25.jpeg",
+      "/images/guttergallery26.jpeg",
     ],
     "PAINTING": [
       "/images/paintinggallery1.jpeg",
@@ -147,7 +153,18 @@ const [page, setPage] = useState(0);
 
   const [activeService, setActiveService] = useState("GUTTER CLEANING");
 
-  const images = galleryImages[activeService] || [];
+ useEffect(() => {
+  const shuffleArray = (array: string[]) => {
+    return [...array].sort(() => Math.random() - 0.5);
+  };
+
+  const imgs = galleryImages[activeService] || [];
+  setShuffledImages(shuffleArray(imgs));
+  setPage(0);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+}, [activeService]);
+
+  const images = shuffledImages;
 
 const totalPages = Math.ceil(images.length / IMAGES_PER_PAGE);
 
