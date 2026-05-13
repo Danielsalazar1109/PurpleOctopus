@@ -99,6 +99,8 @@ const [page, setPage] = useState(0);
       "/images/removalgallery27.jpeg",
       "/images/removalgallery28.jpeg",
       "/images/removalgallery29.jpeg",
+      "/images/removalgallery30.jpeg",
+      "/images/removalgallery31.jpeg",
     ],
 
     "WINDOWS CLEANING": [
@@ -135,7 +137,18 @@ const [page, setPage] = useState(0);
       "/images/movinggallery4.jpeg",
       "/images/movinggallery5.jpeg",
       "/images/movinggallery6.jpeg",
+      "/images/movinggallery7.jpeg",
+      "/images/movinggallery8.jpeg",
     ],
+    "AIRBNB CLEANING": [
+      "/images/airgallery1.jpeg",
+      "/images/airgallery2.jpeg",
+      "/images/airgallery3.jpeg",
+    ],
+    "POWER WASHING": [
+      "/images/powergallery1.jpeg",
+      "/images/powergallery2.jpeg",
+    ]
   };
 
   const services = [
@@ -149,6 +162,7 @@ const [page, setPage] = useState(0);
     "MOVE IN / MOVE OUT CLEANING",
     "AIRBNB CLEANING",
     "RESIDENTIAL CLEANING",
+    "POWER WASHING"
   ];
 
   const [activeService, setActiveService] = useState("GUTTER CLEANING");
